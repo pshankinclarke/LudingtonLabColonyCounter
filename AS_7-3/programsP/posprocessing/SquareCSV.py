@@ -20,14 +20,14 @@ import sys
 def exS():
    postprocess = os.path.dirname(os.path.realpath(__file__))
    photopath = postprocess.replace('/programsP/posprocessing','/photographs')
-
+   picklepath = postprocess.replace('/programsP/posprocessing','/_pickle'    )
    files = [f for f in sorted(listdir(photopath)) if isfile(join(photopath, f))]
    photonames = [] 
    for photo in files: 
       if photo.endswith('.png') or photo.endswith('.JPG') or photo.endswith('.jpg'):
          photonames.append(photo)
    print(photonames)
-   _ccf = open('/Users/shankin-clarke/Desktop/AS-7_3/_pickle/_cellCounts', 'rb')      
+   _ccf = open(picklepath + '/' + '_cellCounts', 'rb')      
    _cc = pickle.load(_ccf) 
    _ccf.close() 
 
