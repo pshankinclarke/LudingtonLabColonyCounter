@@ -46,5 +46,5 @@ root_path = prepath.replace('/programsP/preprocessing','')
 progpath = prepath.replace('/preprocessing','')
 rotpath = root_path + '/' + 'photographs/rot'
 photopath = root_path + '/' + 'photographs'
-photolist = [f for f in listdir(photopath) if isfile(join(photopath, f))]
+#photolist = [f for f in listdir(photopath) if isfile(join(photopath, f))]
 unanalpath = root_path + '/' + 'unanalyzed'

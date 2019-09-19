@@ -6,7 +6,7 @@ def myround(x, base):
 
 def exrez():
    hw = []
-   onlyfiles = [f for f in listdir(photopath) if isfile(join(photopath, f))]
+   photolist = [f for f in listdir(photopath) if isfile(join(photopath, f))]
    for photo in photolist:
       if photo.endswith('.png') or photo.endswith('.JPG') or photo.endswith('.jpg'):
          if photo != 'control.png' and photo != 'test.JPG':
