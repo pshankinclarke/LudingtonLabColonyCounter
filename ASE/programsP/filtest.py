@@ -238,7 +238,10 @@ def predict(classifier,classifier2,fule):
    #draw(transpredL,transcord,photopath)
    return [transpredL,transcord,photopath]
 
-def draw(predictionList,coordinates,img,combList,count):
+def draw(predictionList,coordinates,img,combList,countL,count,countH,L):
+   print('drawling') 
+   #make receipts for each photo go into a new directory named after the photo
+   print(img)
    spl = img[0].split('/')
    fyle = spl[len(spl)-1]
    im = Image.open(img[0])
@@ -266,12 +269,13 @@ def draw(predictionList,coordinates,img,combList,count):
       elif pred[0] == 1:
          pixels[cord[0],cord[1]] = (119, 78 ,252)
 
-   textsize = 65 
-   move = 35
+   textsize = 35 
+   move = 85
    draw = ImageDraw.Draw(imggg)
    font_type = ImageFont.truetype("arial.ttf", textsize)
+   images = [str(L) + 'recp_TLT_' + fyle,str(L) + 'recp_MP_' + fyle,str(L) + 'recp_NP_' + fyle]   
    # draw.text((x, y),"Sample Text",(r,g,b))
-   for comb,c in zip(combList,count):
+   for comb,cl,c,ch in zip(combList,countL,count,countH):
        xstart = comb[0][0] 
        xend = comb[1][0]
        ystart = comb[0][1]
@@ -279,12 +283,12 @@ def draw(predictionList,coordinates,img,combList,count):
        midx = int((xstart + xend)/2) - move
        midy = int((ystart + yend)/2)
        #round(answer, 2)
-       draw.text((midx, midy),str(round(c[2],2)),(255,255,255),font=font_type)
-   imggg.save('recp_TLT_' + fyle)
+       draw.text((midx, midy),str(round(cl[2],2)) + ' ' + str(round(c[2],2)) + ' ' + str(round(ch[2],2)) + '   ',(255,255,255),font=font_type)
+   imggg.save(images[0])
 
    draw = ImageDraw.Draw(imgg)
    # draw.text((x, y),"Sample Text",(r,g,b))
-   for comb,c in zip(combList,count):
+   for comb,cl,c,ch in zip(combList,countL,count,countH):
        xstart = comb[0][0] 
        xend = comb[1][0]
        ystart = comb[0][1]
@@ -292,12 +296,12 @@ def draw(predictionList,coordinates,img,combList,count):
        midx = int((xstart + xend)/2) - move
        midy = int((ystart + yend)/2)
        #round(answer, 2)
-       draw.text((midx, midy),str(round(c[0],2)),(255,255,255),font=font_type)
-   imgg.save('recp_MP_' + fyle)
+       draw.text((midx, midy),str(round(cl[0],2)) + ' ' + str(round(c[0],2)) + ' ' + str(round(ch[0],2)) + '   ',(255,255,255),font=font_type)
+   imgg.save(images[1])
 
    draw = ImageDraw.Draw(im)
    # draw.text((x, y),"Sample Text",(r,g,b))
-   for comb,c in zip(combList,count):
+   for comb,cl,c,ch in zip(combList,countL,count,countH):
        xstart = comb[0][0]
        xend = comb[1][0]
        ystart = comb[0][1]
@@ -305,22 +309,27 @@ def draw(predictionList,coordinates,img,combList,count):
        midx = int((xstart + xend)/2) - move
        midy = int((ystart + yend)/2)
        #round(answer, 2)
-       draw.text((midx, midy),str(round(c[1],2)),(255,255,255),font=font_type)
-   im.save('recp_NP_' + fyle)
-
-
-   FName = ['recp_NP_' + fyle ,'recp_MP_' + fyle ,'recp_TLT_' + fyle ]
+       draw.text((midx, midy),str(round(cl[1],2)) + ' ' + str(round(c[1],2)) + ' ' + str(round(ch[1],2)) + '   ' ,(255,255,255),font=font_type)
+   im.save(images[2])
+   
 
    src = os.path.dirname(os.path.realpath(__file__))
-   dst = src.replace('programsP','receipts')
-   for name in FName:
+   rep_path = src.replace('programsP','receipts')
+   try:
+      os.makedirs(rep_path + '/' + fyle)
+   except FileExistsError:
+      pass
+   
+   
+   #/Users/parkershankin-clarke/Desktop/LudingtonLabColonyCounter-master/ASE/programsP/Erecp_TLT_P123_type_ratio1_ratio2_dilution_date_treatment_time_rotation.pngP123_type_ratio1_ratio2_dilution_date_treatment_time_rotation.png  
+   dst = rep_path + '/' + fyle 
+   for name in images:
        try:
           shutil.move(src + '/' +  name, dst)
        except:
            os.remove(dst + '/' + name)
            shutil.move(src + '/' +  name, dst)
-
-
+    
    return
 
 def makeBGD(datum,pL): 

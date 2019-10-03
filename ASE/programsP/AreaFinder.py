@@ -40,9 +40,15 @@ def Getarea(dil):
            for blob in blobs:
               y,x,r = blob
               dilr.append(r)
-       mr = statistics.mean(dilr)
-       Area = PI * (mr*mr)
-       return Area
+       lr = min(dilr)
+       mr = statistics.median(dilr)
+       hr = max(dilr)
+
+       Area_L = PI * (lr * lr)
+       Area = PI * (mr * mr)
+       Area_H = PI * (hr * hr)
+       return Area_L , Area , Area_H
+    
     if dil == '10^-2':
        print('**************')
        print('**************')
@@ -57,23 +63,28 @@ def Getarea(dil):
              radw = width/2
              radh = height/2
              rad = (radw + radh)/2
-             dilr.append(rad)
+             dilr.append(rad) 
        mypath =  Acirc2_dir
        _fyle = mypath + '/'  + 'dbr2'
-       dbfile = open(_fyle, 'rb') 
-       db = pickle.load(dbfile)                     
-       dbfile.close()           
+       dbfile = open(_fyle, 'rb')
+       db = pickle.load(dbfile)
+       dbfile.close()
 
        for info in db:
            blobs = info[0]
            photo = info[1]
-           print(blobs)
-           print(photo)
            for blob in blobs:
               y,x,r = blob
               dilr.append(r)
-       mr = statistics.mean(dilr)
-       Area = PI * (mr*mr)
+       lr = min(dilr)
+       mr = statistics.median(dilr)
+       hr = max(dilr)
+
+       Area_L = PI * (lr * lr)
+       Area = PI * (mr * mr)
+       Area_H = PI * (hr * hr)
+       return Area_L , Area , Area_H
+              
     if dil == '10^-3':
        print('**************')
        print('**************')
@@ -91,9 +102,9 @@ def Getarea(dil):
              dilr.append(rad)
        mypath =  Acirc3_dir
        _fyle = mypath + '/'  + 'dbr3'
-       dbfile = open(_fyle, 'rb') 
-       db = pickle.load(dbfile)                     
-       dbfile.close()           
+       dbfile = open(_fyle, 'rb')
+       db = pickle.load(dbfile)
+       dbfile.close()
 
        for info in db:
            blobs = info[0]
@@ -101,10 +112,15 @@ def Getarea(dil):
            for blob in blobs:
               y,x,r = blob
               dilr.append(r)
-       mr = statistics.mean(dilr)
-       Area = PI * (mr*mr)
+       lr = min(dilr)
+       mr = statistics.median(dilr)
+       hr = max(dilr)
 
+       Area_L = PI * (lr * lr)
+       Area = PI * (mr * mr)
+       Area_H = PI * (hr * hr)
+       return Area_L , Area , Area_H 
 
 
 if __name__ == '__main__':
-    Getarea('10^-1')
+    Getarea(None)

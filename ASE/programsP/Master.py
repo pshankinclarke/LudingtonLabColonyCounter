@@ -22,17 +22,20 @@ if __name__ == '__main__':
     print('*************************')
     print('*************************')
     
+    
     import db
     db.main()
     print('*************************')
     print('*************************')
     print('*************************')
     
+    
     import cpy 
     print('*************************')
     print('*************************')
     print('*************************')
     cpy.exSave()
+    
     import rotate
     print('*************************')
     print('*************************')
@@ -44,12 +47,15 @@ if __name__ == '__main__':
     print('*************************')
     print('*************************')
     RCZ.exrez()
-     
     import sblobdec
     sblobdec.exblob()
     
+
     import SquareCSV
     SquareCSV.exS()
-
+    
     import clean
     clean.exC()
+     
+    import drawGrids
+    drawGrids.draw_grids()

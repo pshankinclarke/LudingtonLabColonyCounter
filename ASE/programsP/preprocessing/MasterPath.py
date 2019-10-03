@@ -39,13 +39,23 @@ from os import path
 import shutil
 from PIL import Image, ImageDraw
 
+#/Users/parkershankin-clarke/Desktop/LudingtonLabColonyCounter-master/ASE/cropped
 
+#/Users/parkershankin-clarke/Desktop/LudingtonLabColonyCounter-master/ASE/cropped/receipts
 
 
 
 #/Users/parkershankin-clarke/Desktop/take/AS_7-3/programsP/preprocessing
 root_dir =  os.path.dirname(os.path.realpath(__file__))
 pre_dir = root_dir.replace('/MakeDir.py','')
+
+
+#/Users/parkershankin-clarke/Desktop/LudingtonLabColonyCounter-master/ASE/cropped
+cropped_dir = pre_dir.replace('programsP/preprocessing','cropped')
+#/Users/parkershankin-clarke/Desktop/LudingtonLabColonyCounter-master/ASE/cropped/receipts
+croppedrep_dir = cropped_dir + '/' + 'receipts'
+
+
 #/Users/parkershankin-clarke/Desktop/take/AS_7-3/_pickle
 pickle_dir = pre_dir.replace('programsP/preprocessing','_pickle')
 #/Users/parkershankin-clarke/Desktop/take/AS_7-3/_pickle/databases
@@ -58,6 +68,16 @@ Acirc1_dir = Acirc_dir + '/' + '10^-1'
 Acirc2_dir = Acirc_dir + '/' + '10^-2'
 #/Users/parkershankin-clarke/Desktop/take/AS_7-3/Acirc/10^-3
 Acirc3_dir = Acirc_dir + '/' + '10^-3'
+
+#/Users/parkershankin-clarke/Desktop/take/AS_7-3/Acirc/10^-1
+RAcirc1_dir = Acirc_dir + '/' + '10^-1' + '/' + 'rep'
+#/Users/parkershankin-clarke/Desktop/take/AS_7-3/Acirc/10^-2
+RAcirc2_dir = Acirc_dir + '/' + '10^-2'+ '/' + 'rep'
+#/Users/parkershankin-clarke/Desktop/take/AS_7-3/Acirc/10^-3
+RAcirc3_dir = Acirc_dir + '/' + '10^-3'+ '/' + 'rep'
+
+
+
 #/Users/parkershankin-clarke/Desktop/take/AS_7-3/Acirc/10^-1
 Acirc1M_dir = Acirc_dir + '/' + '10^-1M'
 #/Users/parkershankin-clarke/Desktop/take/AS_7-3/Acirc/10^-2
