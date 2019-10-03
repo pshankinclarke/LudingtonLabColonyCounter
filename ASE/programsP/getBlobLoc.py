@@ -136,7 +136,7 @@ def GBACp(fylepath,comblist,RL):
     spl = fylepath.split('/')
     fyle = spl[len(spl)-1]
 
-    pulldb = True
+    pulldb = False
     if not pulldb:    
        db = filtest.main(fylepath)
        stub = fyle.replace('.png','')
