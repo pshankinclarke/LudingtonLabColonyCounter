@@ -17,7 +17,7 @@ def exC():
    for photo in onlyfiles:
        if photo.endswith('.jpg') or photo.endswith('.png') or photo.endswith('.JPG'):
            os.remove(photopath + '/' + photo)
-   durs = [Acirc1_dir,Acirc2_dir,Acirc3_dir,Acirc1M_dir,Acirc2M_dir,Acirc3M_dir]
+   durs = [Acirc1_dir,Acirc2_dir,Acirc3_dir,Acirc1M_dir,Acirc2M_dir,Acirc3M_dir,AcircND_dir,AcircNDM_dir]
    dst_circ_dir = Acircrep_dir
 
    for dur in durs:

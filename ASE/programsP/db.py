@@ -88,6 +88,7 @@ def main():
    radpath1 = cir_path.replace('programsP','Acirc/10^-1')
    radpath2 = cir_path.replace('programsP','Acirc/10^-2')
    radpath3 = cir_path.replace('programsP','Acirc/10^-3')
+   radpath4 = cir_path.replace('programsP','Acirc/ND')
    #/Users/parkershankin-clarke/Desktop/take/AS_7-3/programsP/filt2Data/trainfilt2RL/BGD
    SynMCH = cir_path + '/' + 'filt2Data/trainfiltSYN/MCH'
    SynNP = cir_path + '/' + 'filt2Data/trainfiltSYN/NP'
@@ -97,8 +98,8 @@ def main():
    RNP = cir_path + '/' + 'filt2Data/trainfilt2RL/NP'
    RBGD = cir_path + '/' + 'filt2Data/trainfilt2RL/BGD'
 
-   pathList = [cir_path + '/filt2Data/trainfilt2/NP',cir_path + '/filt2Data/trainfilt2/MCH',cir_path + '/filt2Data/trainfilt2/BGD',radpath1,radpath2,radpath3,SynNP,SynMCH,SynBGD,RNP,RMCH,RBGD ]
-   dbN = ['dbNf2','dbf2M','dbf2B','dbr1','dbr2','dbr3','dbS_N','dbS_M','dbS_B','dbR_N','dbR_M','dbR_B']
+   pathList = [cir_path + '/filt2Data/trainfilt2/NP',cir_path + '/filt2Data/trainfilt2/MCH',cir_path + '/filt2Data/trainfilt2/BGD',radpath1,radpath2,radpath3,SynNP,SynMCH,SynBGD,RNP,RMCH,RBGD,radpath4]
+   dbN = ['dbNf2','dbf2M','dbf2B','dbr1','dbr2','dbr3','dbS_N','dbS_M','dbS_B','dbR_N','dbR_M','dbR_B','dbr4']
 
    for path,dbNi in zip(pathList,dbN):
       blobs_dog = analyze(path)

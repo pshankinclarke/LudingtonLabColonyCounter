@@ -69,6 +69,10 @@ Acirc2_dir = Acirc_dir + '/' + '10^-2'
 #/Users/parkershankin-clarke/Desktop/take/AS_7-3/Acirc/10^-3
 Acirc3_dir = Acirc_dir + '/' + '10^-3'
 
+#/Users/parkershankin-clarke/Desktop/take/AS_7-3/Acirc/10^-3
+AcircND_dir = Acirc_dir + '/' + 'ND'
+
+
 #/Users/parkershankin-clarke/Desktop/take/AS_7-3/Acirc/10^-1
 RAcirc1_dir = Acirc_dir + '/' + '10^-1' + '/' + 'rep'
 #/Users/parkershankin-clarke/Desktop/take/AS_7-3/Acirc/10^-2
@@ -77,6 +81,8 @@ RAcirc2_dir = Acirc_dir + '/' + '10^-2'+ '/' + 'rep'
 RAcirc3_dir = Acirc_dir + '/' + '10^-3'+ '/' + 'rep'
 
 
+RAcircND_dir = Acirc_dir + '/' + 'ND'+ '/' + 'rep'
+
 
 #/Users/parkershankin-clarke/Desktop/take/AS_7-3/Acirc/10^-1
 Acirc1M_dir = Acirc_dir + '/' + '10^-1M'
@@ -84,7 +90,13 @@ Acirc1M_dir = Acirc_dir + '/' + '10^-1M'
 Acirc2M_dir = Acirc_dir + '/' + '10^-2M'
 #/Users/parkershankin-clarke/Desktop/take/AS_7-3/Acirc/10^-3
 Acirc3M_dir = Acirc_dir + '/' + '10^-3M'
+
+AcircNDM_dir = Acirc_dir + '/' + 'NDM'
+
 Acircrep_dir = Acirc_dir + '/' + 'repository'
+
+
+
 #/Users/parkershankin-clarke/Desktop/take/AS_7-3/csv
 csv_dir = pre_dir.replace('programsP/preprocessing','csv')
 #/Users/parkershankin-clarke/Desktop/take/AS_7-3/photographs

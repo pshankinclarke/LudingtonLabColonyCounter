@@ -12,7 +12,7 @@ def clean(folder):
          print('EXCEPTION RAISED IN CLEAN OF MAKEDIR FOR {}'.format(e))
  
 def main():
-    dirNames = [pre_dir,pickle_dir,pickledb_dir,Acirc_dir,Acirc1_dir,Acirc2_dir,Acirc3_dir,csv_dir,photo_dir,photorot_dir,prog_dir,pos_dir,trainfilt_dir,trainfiltBGD_dir,trainfiltBGDrep_dir,trainfiltNP_dir,trainfiltNPrep_dir,trainfiltMCH_dir,trainfiltMCHrep_dir,trainfiltrepository_dir,receipts_dir,unanalyzed_dir,Acirc1M_dir,Acirc2M_dir, Acirc3M_dir,trainfilt2RLMCH_dir,trainfilt2RLNP_dir,trainfilt2RLBGD_dir,trainfilt2RLrepository_dir,trainfiltSYNrepository_dir,trainfiltSYNMCH_dir,trainfiltSYNNP_dir,trainfiltSYNBGD_dir,cropped_dir,croppedrep_dir,RAcirc1_dir,RAcirc2_dir,RAcirc3_dir]
+    dirNames = [pre_dir,pickle_dir,pickledb_dir,Acirc_dir,Acirc1_dir,Acirc2_dir,Acirc3_dir,csv_dir,photo_dir,photorot_dir,prog_dir,pos_dir,trainfilt_dir,trainfiltBGD_dir,trainfiltBGDrep_dir,trainfiltNP_dir,trainfiltNPrep_dir,trainfiltMCH_dir,trainfiltMCHrep_dir,trainfiltrepository_dir,receipts_dir,unanalyzed_dir,Acirc1M_dir,Acirc2M_dir, Acirc3M_dir,trainfilt2RLMCH_dir,trainfilt2RLNP_dir,trainfilt2RLBGD_dir,trainfilt2RLrepository_dir,trainfiltSYNrepository_dir,trainfiltSYNMCH_dir,trainfiltSYNNP_dir,trainfiltSYNBGD_dir,cropped_dir,croppedrep_dir,RAcirc1_dir,RAcirc2_dir,RAcirc3_dir,RAcircND_dir,AcircND_dir]
     for di in dirNames:
        s = di.split('/')
        name = s[len(s) - 1]

@@ -35,7 +35,7 @@ if __name__ == '__main__':
     print('*************************')
     print('*************************')
     cpy.exSave()
-    
+        
     import rotate
     print('*************************')
     print('*************************')
@@ -47,6 +47,7 @@ if __name__ == '__main__':
     print('*************************')
     print('*************************')
     RCZ.exrez()
+    
     import sblobdec
     sblobdec.exblob()
     

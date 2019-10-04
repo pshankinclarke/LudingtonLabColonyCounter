@@ -153,7 +153,7 @@ def GBACp(fylepath,comblist,RL):
           shutil.move(src + '/' + 'database' + stub, dst)
     else:
        print('pulling database')
-       ff = '/Users/parkershankin-clarke/Desktop/LudingtonLabColonyCounter-master/ASE/_pickle/databases/databasecontrolSYN' 
+       ff = '/Users/parkershankin-clarke/Documents/GitHub/LudingtonLabColonyCounter/ASE/_pickle/databases/databaseP123_type_ratio1_ratio2_ND_date_treatment_time_rotation' 
        dbfile = open(ff, 'rb')
        db = pickle.load(dbfile)
        dbfile.close()
@@ -207,6 +207,9 @@ def GBACp(fylepath,comblist,RL):
            circleArea_L, circleArea,circleArea_H  = AreaFinder.Getarea('10^-2')
         elif dilution == '10^-3': 
            circleArea_L, circleArea,circleArea_H  = AreaFinder.Getarea('10^-3')
+        elif dilution == 'ND':
+           circleArea_L, circleArea,circleArea_H  = AreaFinder.Getarea('10^-3')
+
 
     median_RL = []
     medianL_RL = []
