@@ -387,8 +387,11 @@ def main(fylepath):
    flat_trainput, pathinput = makeNP(flat_trainput,pathinput)
    
    for train,path in zip(flat_trainput,pathinput):
-      colorList, pht = MakeData(train,path)
-      traincomposite.append([colorList, pht])
+      if len(train[0]) > 0:
+         colorList, pht = MakeData(train,path)
+         traincomposite.append([colorList, pht])
+      else:
+         continue
    FL = makeLabels(traincomposite,pathinput)
    #[featureList,labelList,featureList2,labelList2,RfeatureList,RlabelList,RfeatureList2,RlabelList2,SfeatureList,SlabelList,SfeatureList2,SlabelList2]   
    features = [FL[0][i:i+1] for i in range(0, len(FL[0]), 1)]
